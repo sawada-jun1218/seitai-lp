@@ -5,11 +5,33 @@
 }
 
 .hero {
+    position: relative;
     width: 100%;
-    padding: 100px 0 70px;
-    /* ←上100 下70 を採用 */
-    min-height: 500px;
-    /* ←最低でもこの高さは欲しい */
+    height: 600px;
+    background: url('../img/hero.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+/* オーバーレイ（黒半透明） */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* テキストが上に来るように */
+.hero-inner {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
